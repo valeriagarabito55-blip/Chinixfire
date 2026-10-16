@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DiamonFire | Tienda gamer</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#050914;color:#fff;font-family:Arial,sans-serif}
+header{padding:25px 16px;text-align:center;background:#09152b;border-bottom:2px solid #087cff}
+h1{color:#28a5ff;font-size:36px;margin:8px}
+header p{color:#b6d9ff}
+main{max-width:700px;margin:auto;padding:20px}
+.hero{text-align:center;padding:24px 10px}
+.hero h2{font-size:27px}
+.hero p{color:#b7c9df;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.card{background:#0d1930;border:1px solid #164a85;border-radius:14px;padding:18px 10px;text-align:center}
+.diamond{font-size:35px}
+.card h3{margin:10px 0;color:#69bdff}
+.price{font-size:20px;font-weight:bold;margin:12px 0}
+button{background:#087cff;color:white;border:0;border-radius:9px;padding:12px;font-weight:bold;width:100%;cursor:pointer}
+form{margin-top:24px;background:#0d1930;padding:20px;border-radius:14px;border:1px solid #164a85}
+label{display:block;margin:15px 0 7px}
+input,select{width:100%;padding:13px;border-radius:8px;border:1px solid #3b5c82;background:#050914;color:white}
+.notice{font-size:13px;color:#a8bed8;line-height:1.6}
+footer{text-align:center;padding:25px;color:#8195b1;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<div class="diamond">💎</div>
+<h1>DiamonFire</h1>
+<p>Tu próximo nivel comienza acá</p>
+</header>
+<main>
+<section class="hero">
+<h2>Recargá tus diamantes</h2>
+<p>Elegí tu paquete y prepará tu ID de jugador para realizar tu pedido.</p>
+</section>
+<div class="grid">
+<div class="card"><div class="diamond">💎</div><h3>100 diamantes</h3><p class="price">Precio a confirmar</p><button onclick="elegir('100 diamantes')">Elegir paquete</button></div>
+<div class="card"><div class="diamond">💎</div><h3>310 diamantes</h3><p class="price">Precio a confirmar</p><button onclick="elegir('310 diamantes')">Elegir paquete</button></div>
+<div class="card"><div class="diamond">💎</div><h3>520 diamantes</h3><p class="price">Precio a confirmar</p><button onclick="elegir('520 diamantes')">Elegir paquete</button></div>
+<div class="card"><div class="diamond">💎</div><h3>1060 diamantes</h3><p class="price">Precio a confirmar</p><button onclick="elegir('1060 diamantes')">Elegir paquete</button></div>
+</div>
+<form id="pedido">
+<h2>Preparar pedido</h2>
+<label for="paquete">Paquete elegido</label>
+<select id="paquete">
+<option>100 diamantes</option>
+<option>310 diamantes</option>
+<option>520 diamantes</option>
+<option>1060 diamantes</option>
+</select>
+<label for="jugador">ID de jugador de Free Fire</label>
+<input id="jugador" inputmode="numeric" placeholder="Ingresá tu ID" required>
+<p class="notice">No ingreses tu contraseña. Este formulario es una demostración y todavía no envía pedidos ni realiza recargas.</p>
+<button type="submit">Consultar pedido</button>
+<p id="mensaje" class="notice"></p>
+</form>
+</main>
+<footer>DiamonFire · Tienda independiente de recargas</footer>
+<script>
+function elegir(p){
+document.getElementById('paquete').value=p;
+document.getElementById('pedido').scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('pedido').addEventListener('submit',function(e){
+e.preventDefault();
+document.getElementById('mensaje').textContent='Diseño de demostración: todavía tenés que conectar un proveedor de recargas y un sistema de pago para recibir pedidos.';
+});
+</script>
+</body>
+</html>
